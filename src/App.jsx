@@ -1,0 +1,6 @@
+import {Routes,Route,useLocation} from 'react-router-dom';import {useEffect} from 'react';
+import Header from './components/Header.jsx';import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';import Explore from './pages/Explore.jsx';import Challenge from './pages/Challenge.jsx';import Practice from './pages/Practice.jsx';import {ExamList,ExamIntro} from './pages/MockExams.jsx';import ExamAttempt from './pages/ExamAttempt.jsx';import ExamResults from './pages/ExamResults.jsx';import About from './pages/About.jsx';import NotFound from './pages/NotFound.jsx';
+export default function App(){const {pathname}=useLocation();useEffect(()=>{window.scrollTo(0,0)},[pathname]);
+return(<><a className="skip" href="#main">Skip to content</a><Header/><main id="main"><Routes>
+<Route path="/" element={<Home/>}/><Route path="/explore" element={<Explore/>}/><Route path="/explore/:id" element={<Challenge/>}/><Route path="/practice" element={<Practice/>}/><Route path="/mock-exams" element={<ExamList/>}/><Route path="/mock-exams/:examId" element={<ExamIntro/>}/><Route path="/mock-exams/:examId/attempt" element={<ExamAttempt/>}/><Route path="/mock-exams/:examId/results/:attemptId" element={<ExamResults/>}/><Route path="/about" element={<About/>}/><Route path="*" element={<NotFound/>}/></Routes></main><Footer/></>)}

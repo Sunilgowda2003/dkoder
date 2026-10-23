@@ -1,0 +1,508 @@
+
+/* =========================================
+   DKODER FOOTER — COMPLETE FINAL CSS
+   ========================================= */
+
+.ftr {
+  --ftr-bg: #1d0b46;
+  --ftr-card: #2d1b53;
+  --ftr-yellow: #ffc515;
+  --ftr-white: #fff;
+  --ftr-text: #d0c5e8;
+  --ftr-border: rgba(255, 255, 255, 0.12);
+
+  width: 100%;
+  overflow: hidden;
+  color: var(--ftr-text);
+  background: var(--ftr-bg);
+}
+
+.ftr,
+.ftr * {
+  box-sizing: border-box;
+}
+
+.ftr a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ftr-wrap {
+  width: min(100% - 64px, 1640px);
+  margin: 0 auto;
+  padding: 30px 0 20px;
+}
+
+/* =========================================
+   COMPACT CONTACT CARDS
+   ========================================= */
+
+.ftr-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.ftr-contact-card {
+  min-width: 0;
+  min-height: 76px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ftr-white);
+  text-decoration: none;
+  background: var(--ftr-card);
+  border: 1px solid var(--ftr-border);
+  border-radius: 20px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+a.ftr-contact-card:hover {
+  transform: translateY(-2px);
+  background: #392361;
+  border-color: var(--ftr-yellow);
+}
+
+.ftr-contact-icon {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: var(--ftr-bg);
+  background: var(--ftr-yellow);
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.ftr-contact-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.ftr-contact-label {
+  color: #c4b3e9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.ftr-contact-value {
+  color: var(--ftr-white);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.ftr-arrow {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ftr-border);
+  border-radius: 50%;
+  font-size: 15px;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+a.ftr-contact-card:hover .ftr-arrow {
+  color: var(--ftr-yellow);
+  border-color: var(--ftr-yellow);
+}
+
+/* DIVIDER */
+
+.ftr-divider {
+  height: 1px;
+  margin: 36px 0 42px;
+  background: var(--ftr-border);
+}
+
+/* MAIN FOOTER LAYOUT */
+
+.ftr-main {
+  display: grid;
+  grid-template-columns: 1.65fr repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.ftr-brand,
+.ftr-column {
+  min-width: 0;
+}
+
+/* BRAND */
+
+.ftr-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ftr-white);
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 850;
+}
+
+.ftr-logo-symbol {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--ftr-yellow);
+  color: var(--ftr-bg);
+  font-size: 17px;
+}
+
+.ftr-description {
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* ADDRESS */
+
+.ftr-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 14px;
+  background: var(--ftr-card);
+  border: 1px solid var(--ftr-border);
+  border-radius: 20px;
+}
+
+.ftr-address-icon {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ftr-yellow);
+  background: rgba(255, 197, 21, 0.13);
+  font-size: 21px;
+}
+
+.ftr-address strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--ftr-white);
+  font-size: 13px;
+}
+
+.ftr-address address {
+  font-size: 12px;
+  line-height: 1.75;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+/* PARTNER BUTTON */
+
+.ftr-partner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 11px 16px;
+  border-radius: 24px;
+  background: var(--ftr-yellow);
+  color: var(--ftr-bg);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ftr-partner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(255, 197, 21, 0.2);
+}
+
+/* FOOTER COLUMNS */
+
+.ftr-column-title {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 17px;
+  color: var(--ftr-white);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ftr-round-icon {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ftr-bg);
+  background: var(--ftr-yellow);
+  font-size: 17px;
+}
+
+.ftr-links {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ftr-link,
+.ftr-coming-soon {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--ftr-text);
+  font-size: 12px;
+  line-height: 1.7;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.ftr-link:hover {
+  color: var(--ftr-yellow);
+}
+
+.ftr-coming-soon {
+  color: #a99bbb;
+}
+
+.ftr-soon-label {
+  padding: 2px 5px;
+  border: 1px solid var(--ftr-border);
+  border-radius: 5px;
+  font-size: 9px;
+}
+
+/* BOTTOM BAR */
+
+.ftr-bottom {
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ftr-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.ftr-bottom p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.ftr-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.ftr-legal a {
+  color: var(--ftr-text);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.ftr-legal a:hover {
+  color: var(--ftr-yellow);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.ftr a:focus-visible {
+  outline: 3px solid var(--ftr-yellow);
+  outline-offset: 4px;
+}
+
+/* TABLET */
+
+@media (max-width: 1200px) {
+  .ftr-wrap {
+    width: calc(100% - 48px);
+  }
+
+  .ftr-contact-card {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .ftr-contact-icon {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .ftr-contact-value {
+    font-size: 12px;
+  }
+
+  .ftr-arrow {
+    flex-basis: 26px;
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .ftr-main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 22px;
+  }
+
+  .ftr-brand {
+    grid-column: 1 / -1;
+    max-width: 650px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .ftr-wrap {
+    width: calc(100% - 32px);
+    padding-top: 26px;
+  }
+
+  .ftr-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .ftr-contact-card {
+    min-height: 68px;
+    padding: 10px 13px;
+    border-radius: 16px;
+  }
+
+  .ftr-contact-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .ftr-contact-label {
+    font-size: 10px;
+  }
+
+  .ftr-contact-value {
+    font-size: 12px;
+  }
+
+  .ftr-divider {
+    margin: 28px 0;
+  }
+
+  .ftr-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
+
+  .ftr-brand {
+    grid-column: 1 / -1;
+  }
+
+  .ftr-logo {
+    font-size: 24px;
+  }
+
+  .ftr-logo-symbol {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .ftr-column-title {
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .ftr-round-icon {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .ftr-links {
+    gap: 9px;
+  }
+
+  .ftr-link,
+  .ftr-coming-soon {
+    font-size: 12px;
+  }
+
+  .ftr-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 26px;
+  }
+
+  .ftr-legal {
+    gap: 14px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .ftr-wrap {
+    width: calc(100% - 24px);
+  }
+
+  .ftr-main {
+    grid-template-columns: 1fr;
+  }
+
+  .ftr-brand {
+    grid-column: auto;
+  }
+
+  .ftr-contact-card {
+    gap: 8px;
+    padding: 9px 10px;
+  }
+
+  .ftr-contact-value {
+    font-size: 11px;
+  }
+
+  .ftr-arrow {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .ftr *,
+  .ftr *::before,
+  .ftr *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

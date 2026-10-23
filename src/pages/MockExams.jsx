@@ -1,0 +1,10 @@
+import {useEffect} from 'react';import {Link,useNavigate,useParams} from 'react-router-dom';import {exams,getExam} from '../data/exams.js';import {startAttempt,findOpen,listAttempts} from '../services/attempts.js';import NotFound from './NotFound.jsx';
+export function ExamList(){useEffect(()=>{document.title='Mock exams | Dkoder'},[]);const past=listAttempts().filter(a=>a.submittedAt);
+return(<section className="section"><div className="wrap"><h1 className="page-title">Mock exams</h1><p className="note">Sample exams for practice. Attempts are stored only in this browser and are not suitable for high-stakes testing.</p>
+<div className="grid">{exams.map(e=><article className="card" key={e.id}><span className="tag">{e.difficulty}</span><h3>{e.title}</h3><p>{e.about}</p><p><small>{e.questionIds.length} questions, {e.minutes} min</small></p><Link className="btn on" to={`/mock-exams/${e.id}`}>View instructions</Link></article>)}</div>
+<h2 style={{marginTop:'2.5rem'}}>Your attempts</h2>{past.length?<ul>{past.map(a=><li key={a.id}><Link to={`/mock-exams/${a.examId}/results/${a.id}`}>{getExam(a.examId)?.title}</Link>: {a.result.score} of {a.result.max}</li>)}</ul>:<div className="empty"><p>No attempts yet. Pick an exam above to begin.</p></div>}</div></section>)}
+export function ExamIntro(){const {examId}=useParams();const e=getExam(examId);const nav=useNavigate();useEffect(()=>{document.title=(e?.title||'Exam')+' | Dkoder'},[e]);if(!e)return <NotFound/>;
+const open=findOpen(examId);const go=()=>{startAttempt(examId);nav(`/mock-exams/${examId}/attempt`)};
+return(<section className="section"><div className="wrap"><Link to="/mock-exams">All exams</Link><h1 className="page-title" style={{marginTop:'1rem'}}>{e.title}</h1>
+<ul><li>{e.questionIds.length} questions, {e.minutes} minutes, one answer per question.</li><li>Correct answer: +{e.marks.right}. Wrong answer: {e.marks.wrong}. Unanswered: 0.</li><li>The timer keeps running if you refresh. The exam submits itself at zero.</li><li>You can mark questions for review and clear a response.</li></ul>
+<button className="btn on" onClick={go}>{open?'Resume exam':'Start exam'}</button></div></section>)}

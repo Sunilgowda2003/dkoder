@@ -1,0 +1,4 @@
+:root{--yellow:#FFC800;--yellow-soft:#FFE380;--ink:#1B1810;--ink-2:#2A261A;--cream:#FBF4E2;--cream-2:#F1E6C6;--gray:#6E6753;
+--font:"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+--s1:.25rem;--s2:.5rem;--s3:1rem;--s4:1.5rem;--s5:2.5rem;--s6:4.5rem;--r-sm:8px;--r-md:16px;--r-pill:999px;
+--shadow:0 2px 0 var(--ink);--ease:cubic-bezier(.2,.7,.2,1);--t:.25s;--max:1120px}
